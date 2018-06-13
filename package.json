@@ -1,0 +1,31 @@
+{
+  "name": "movie-game-search",
+  "version": "1.0.0",
+  "description": "app finds movies based on video games or video games based on movies using public apis",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nchenari/movie-game-search.git"
+  },
+  "keywords": [
+    "video",
+    "games",
+    "movies",
+    "franchise"
+  ],
+  "author": "Nima Chenari, Christina Rust, Katherine Stout",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nchenari/movie-game-search/issues"
+  },
+  "homepage": "https://github.com/nchenari/movie-game-search#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "path": "^0.12.7"
+  }
+}
