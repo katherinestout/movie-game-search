@@ -60,6 +60,7 @@ Add additional notes about how to deploy this on a live system
 
 * [Materialize.css](https://materializecss.com/) - Front-End Framework
 * [express](https://www.npmjs.com/package/express) - Web Framework
+* [request](https://www.npmjs.com/package/requests) - HTTP Calls
 * [body-parser](https://www.npmjs.com/package/body-parser) - JSON Parsing api res/req bodies
 
 ## Contributing
