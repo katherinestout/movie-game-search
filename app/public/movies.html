@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rotten Potatoes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Compiled and minified Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <!-- Compiled and minified Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <!-- jQuery link -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <a href="#"><h1>Rotten Potatoes</h1></a>
+                    <p>"Because just watching the movie is not bad enough..."</p>
+            </header>
+        
+            <form>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="" id="search-input" type="text" class="validate">
+                        <label for="game_title">Enter a movie title</label>
+                    </div>
+                </div>
+                        
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+        
+            <div id="movie-list">
+            </div>  
+        
+            <div id="game-list">
+            </div>
+        </div>
+    </body>
+</html>
