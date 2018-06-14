@@ -14,7 +14,6 @@ app.use(bodyParser.json());
 require("./app/routing/apiRoutes")(app);
 require("./app/routing/htmlRoutes")(app);
 
-
 // starts our server
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
