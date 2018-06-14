@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rotten Potatoes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Compiled and minified Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <!-- Compiled and minified Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <!-- jQuery link -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <style type="text/css">
+
+            #games-view {
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;
+                width: auto;
+                height: auto;
+            }
+                .game {
+                  display: inline-block; 
+                }
+            }
+            
+            #movies-view {
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;
+                width: auto;
+                height: auto;
+              }
+                .movie {
+                  display: inline-block;
+                 
+                }
+              }
+            </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <a href="/*"><h1>Rotten Potatoes</h1></a>
+                    <p>"Because just watching the movie is not bad enough..."</p>
+            </header>
+
+            <form>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="" id="search-input" type="text" class="validate">
+                        <label for="game_title">Enter a series/franchise</label>
+                    </div>
+                </div>
+                        
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">Search
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+
+            <div id="game-list">
+            </div>  
+
+            <div id="movie-list">
+            </div>
+        </div>
+        <!-- javascript -->
+        <script>
+            
+            // handle search button press
+            $("#search-btn").on("click", function(event) {
+                event.preventDefault();
+
+                var searchTerm = $("#search-input").val().trim();
+
+
+                // get the location of the root page 
+                var currentURL = window.location.origin;
+
+                // *** important to use "-" for our external apis
+                searchTerm = searchTerm.replace(/\s+/g, "-").toLowerCase();
+                console.log("user input search term: " + searchTerm);
+                
+                $.ajax({
+                    url: currentURL + "/api/games/" + searchTerm, 
+                    method: "GET"
+                })
+                .then(function(movieData) {
+                    for (var i = 0; i < movieData.length; i++) {
+                        // for each game, 
+
+
+                    }
+
+                    // create div for movie element and assign movie class
+                    var movieElem = $("<div>").addClass("movie");
+                    
+                    // Get game title
+                    var p = $("<p>").text(movieData.);
+                    $("#game-list").append(p);
+                    console.log(gameData);
+                    
+                    // ---------------------------------------------
+
+                    // populate game-list with results
+                    // create div for game element and assign game class
+                    var gameElem = $("<div>").addClass("game");
+                    
+                });
+
+                $.ajax({
+                    url: currentUrl + "/api/movies/" + searchTerm,
+                    method: "GET"
+                })
+                .then(function(gameData) {
+                    for (var i = 0; i < gameData.length, i++) {
+                        // for each movie 
+                    }
+
+                });
+                
+
+                // var cover = $("<img>").attr("src", "#");   
+
+
+            });
+        </script>
+    </body>
+</html>
