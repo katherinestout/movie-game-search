@@ -16,7 +16,3 @@ $("#search-btn").on("click", function(event) {
    
     // Find movies based on video games search
 
-
-
-    
-});
