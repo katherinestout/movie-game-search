@@ -41,9 +41,24 @@ module.exports = function(app) {
         var movieTerm = req.params.movieterm;
         console.log("Movie Search Term: " + movieTerm);
 
-        
+        var queryUrl = "http://www.omdbapi.com/?s=" + movieTerm + "&y=&plot=short&apikey=" + OMDB_KEY;
+        console.log("omdb query url: " + queryUrl);
+        request(queryUrl, function(error, response, body) {
+            // If the request is successful
+            if (!error && response.statusCode === 200) {
+                console.log(body);
+                res.json(JSON.parse(body));
+            }
+
+        });
 
     });
+
+
+
+
+
+
 
 
 
@@ -51,12 +66,31 @@ module.exports = function(app) {
 
     // get movies based on games with date released
     app.get("/api/movies/:gameterm/:date", function(req, res) {
+        var gameTerm = req.params.gameterm;
+        var date = req.params.date;
+        console.log("Game Search Term: " + gameTerm + "Date: " + date);
+
+
+
 
     });
 
     // get games based on movies with date released
     app.get("/api/games/:movieterm/:date", function(req, res) {
+        var movieTerm = req.params.movieterm;
+        var date = req.params.date;
+        console.log("Movie Search Term: " + movieTerm + "Date: " + date);
 
+        var queryUrl = "http://www.omdbapi.com/?s=" + movieTerm + "&y=&plot=short&apikey=" + OMDB_KEY;
+        console.log("omdb query url: " + queryUrl);
+        request(queryUrl, function(error, response, body) {
+            // If the request is successful
+            if (!error && response.statusCode === 200) {
+                console.log(body);
+                res.json(JSON.parse(body));
+            }
+
+        });
     });
 
 }
