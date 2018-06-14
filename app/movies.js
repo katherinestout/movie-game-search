@@ -15,8 +15,8 @@ $("#search-btn").on("click", function(event) {
     gameSearchTerm = gameSearchTerm.replace(/\s+/g, "").toLowerCase();
    
     // Find movies based on video games search
-
-
-
     
+
+
+
 });
