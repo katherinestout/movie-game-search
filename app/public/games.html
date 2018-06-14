@@ -43,8 +43,7 @@
             <div id="movie-list">
             </div>
         </div>
-        <!-- external javascript -->
-        <script src="./app/games.js"></script>
+        <!-- javascript -->
         <script>
             
             // handle search button press
@@ -61,28 +60,46 @@
                 searchTerm = searchTerm.replace(/\s+/g, "-").toLowerCase();
                 console.log("user input search term: " + searchTerm);
                 
-                // populate game-list with results
-                // create div for game item and assign game-item class
-                var gameItem = $("<div>").class("game-item");
-
-                // Get game cover
-                // The AJAX function uses the URL of our API to GET the data associated 
                 $.ajax({
-                    url: currentUrl + "/api/games/" + searchTerm, 
+                    url: currentURL + "/api/games/" + searchTerm, 
+                    method: "GET"
+                })
+                .then(function(movieData) {
+                    for (var i = 0; i < movieData.length; i++) {
+                        // for each game, 
+
+
+                    }
+
+                    // create div for movie element and assign movie class
+                    var movieElem = $("<div>").addClass("movie");
+                    
+                    // Get game title
+                    var p = $("<p>").text(movieData.);
+                    $("#game-list").append(p);
+                    console.log(gameData);
+                    
+                    // ---------------------------------------------
+
+                    // populate game-list with results
+                    // create div for game element and assign game class
+                    var gameElem = $("<div>").addClass("game");
+                    
+                });
+
+                $.ajax({
+                    url: currentUrl + "/api/movies/" + searchTerm,
                     method: "GET"
                 })
                 .then(function(gameData) {
+                    for (var i = 0; i < gameData.length, i++) {
+                        // for each movie 
+                    }
 
-                })
-
-                var cover = $("<img>").attr("src", );
-
-
-
-
-                // Get game title
-                var p = $("<p>").text();
+                });
                 
+
+                // var cover = $("<img>").attr("src", "#");   
 
 
             });
