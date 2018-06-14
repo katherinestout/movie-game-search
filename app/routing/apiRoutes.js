@@ -11,6 +11,7 @@ module.exports = function(app) {
     // get movies based on games
     app.get("/api/movies/:gameterm", function(req, res) {
         
+        // **** SEARCH URL TERM MUST CONTAIN "-" BETWEEN WORDS (EX: star-wars)
         var gameTerm = req.params.gameterm;
         console.log("Game Search Term: " + gameTerm);
 
@@ -19,9 +20,9 @@ module.exports = function(app) {
 
         client.games({
             fields: '*',
-            limit: 5,
+            limit: 10,
             offset: 0,
-            order: 'name:desc',
+            order: 'popularity:desc',
             search: gameTerm
         }).then(response => {
             // response.body contains the parsed JSON response to this query
@@ -47,7 +48,7 @@ module.exports = function(app) {
             // If the request is successful
             if (!error && response.statusCode === 200) {
                 console.log(body);
-                res.json(JSON.parse(body));
+                return res.json(JSON.parse(body));
             }
 
         });
@@ -70,9 +71,6 @@ module.exports = function(app) {
         var date = req.params.date;
         console.log("Game Search Term: " + gameTerm + "Date: " + date);
 
-
-
-
     });
 
     // get games based on movies with date released
@@ -81,16 +79,6 @@ module.exports = function(app) {
         var date = req.params.date;
         console.log("Movie Search Term: " + movieTerm + "Date: " + date);
 
-        var queryUrl = "http://www.omdbapi.com/?s=" + movieTerm + "&y=&plot=short&apikey=" + OMDB_KEY;
-        console.log("omdb query url: " + queryUrl);
-        request(queryUrl, function(error, response, body) {
-            // If the request is successful
-            if (!error && response.statusCode === 200) {
-                console.log(body);
-                res.json(JSON.parse(body));
-            }
-
-        });
     });
 
 }
