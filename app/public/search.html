@@ -114,19 +114,23 @@
                 .then(function(gameData) {
 
                     for (var i = 0; i < gameData.length; i++) {
-                        
-                        // for each game, 
+                        // for each game
+                        var game = gameData[i];
+
                         // create div for game element and assign game class
                         var gameElem = $("<div>").addClass("game");
 
                         // get movie title
-                        var title = $("<p>").text(movie.Title);
+                        var title = $("<p>").text(game.name);
                         
                         // get movie poster
-                        var poster = $("<img>").attr("src", movie.Poster);
+                        var poster = $("<img>").attr("src", game.cover.url);
+
+                        // append title and poseter to gameElem
+                        gameElem.append(poster, title);
 
                         // append to game-list div
-                        $("#game-list").append();
+                        $("#game-list").append(gameElem);
 
                     }
                 });
