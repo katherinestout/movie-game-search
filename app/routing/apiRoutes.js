@@ -1,5 +1,6 @@
 var request = require("request");
 var igdb = require("igdb-api-node").default;
+var ytsearch = require("youtube-search");
 
 // api keys
 const OMDB_KEY = "879503ae";
@@ -50,11 +51,29 @@ module.exports = function(app) {
         });
     });
 
-    app.get("/api/movie/:title", function(req, res) {
+    app.get("/api/movie-media/:title", function(req, res) {
+        
+        var title = req.params.title;
+        console.log("youtube/trailer search title: " + title);
+
+        var options = {
+            maxResults: 10,
+            key: YOUTUBE_KEY
+        };
+
+        ytsearch('jsconf', options, function(err, results) {
+            if (err) return console.log(err);
+
+            console.log(results);
+            res.json(results);
+        });
 
     });
 
-    app.get("api/game/:title", function(req, res) {
+    app.get("api/game-media/:title", function(req, res) {
+
+        var title = req.params.title;
+        console.log("twitch/let's play search title: " + title);
 
     });
 };

@@ -70,7 +70,6 @@
 
                 var searchTerm = $("#search-input").val().trim();
 
-
                 // get the location of the root page 
                 var currentURL = window.location.origin;
 
@@ -78,47 +77,59 @@
                 searchTerm = searchTerm.replace(/\s+/g, "-").toLowerCase();
                 console.log("user input search term: " + searchTerm);
                 
+                // populate movie list
                 $.ajax({
-                    url: currentURL + "/api/games/" + searchTerm, 
+                    url: currentUrl + "/api/movie-list/" + searchTerm,
                     method: "GET"
                 })
                 .then(function(movieData) {
-                    for (var i = 0; i < movieData.length; i++) {
-                        // for each game, 
 
+                    for (var i = 0; i < movieData.length; i++) {
+                        // for each movie 
+                        var movie = movieData.Search[i];
+
+                        // create div for game element and assign game class
+                        var movieElem = $("<div>").addCLass("movie");
+
+                        // get movie title
+                        var title = $("<p>").text(movie.Title);
+                        
+                        // get movie poster
+                        var poster = $("<img>").attr("src", movie.Poster);
+
+                        // append title and poster to movieElem
+                        movieElem.append(poster, title);
+
+                        // append to movie-list div
+                        $("#movie-list").append(movieElem);
 
                     }
-
-                    // create div for movie element and assign movie class
-                    var movieElem = $("<div>").addClass("movie");
-                    
-                    // Get game title
-                    var p = $("<p>").text(movieData.);
-                    $("#game-list").append(p);
-                    console.log(gameData);
-                    
-                    // ---------------------------------------------
-
-                    // populate game-list with results
-                    // create div for game element and assign game class
-                    var gameElem = $("<div>").addClass("game");
-                    
                 });
 
+                // populate game list 
                 $.ajax({
-                    url: currentUrl + "/api/movies/" + searchTerm,
+                    url: currentURL + "/api/game-list/" + searchTerm, 
                     method: "GET"
                 })
                 .then(function(gameData) {
-                    for (var i = 0; i < gameData.length, i++) {
-                        // for each movie 
+
+                    for (var i = 0; i < gameData.length; i++) {
+                        
+                        // for each game, 
+                        // create div for game element and assign game class
+                        var gameElem = $("<div>").addClass("game");
+
+                        // get movie title
+                        var title = $("<p>").text(movie.Title);
+                        
+                        // get movie poster
+                        var poster = $("<img>").attr("src", movie.Poster);
+
+                        // append to game-list div
+                        $("#game-list").append();
+
                     }
-
                 });
-                
-
-                // var cover = $("<img>").attr("src", "#");   
-
 
             });
         </script>
