@@ -3,12 +3,8 @@ var path = require("path");
 // routing
 module.exports = function(app) {
 
-    app.get("/games", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/games.html"));
-    });
-
-    app.get("/movies", function(req, res) {
-        res.sendFile(path.join(__dirname, "../public/movies.html"));
+    app.get("/search", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/search.html"));
     });
 
     // If no matching route is found default to home

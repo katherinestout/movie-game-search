@@ -79,17 +79,20 @@
                 
                 // populate movie list
                 $.ajax({
-                    url: currentUrl + "/api/movie-list/" + searchTerm,
+                    url: currentURL + "/api/movie-list/" + searchTerm,
                     method: "GET"
                 })
                 .then(function(movieData) {
+                    console.log("populating movie list");
+                    console.log(movieData);
 
-                    for (var i = 0; i < movieData.length; i++) {
+                    for (var i = 0; i < movieData.Search.length; i++) {
                         // for each movie 
                         var movie = movieData.Search[i];
+                        console.log(movieData.Search[i]);
 
                         // create div for game element and assign game class
-                        var movieElem = $("<div>").addCLass("movie");
+                        var movieElem = $("<div>").addClass("movie");
 
                         // get movie title
                         var title = $("<p>").text(movie.Title);
@@ -112,6 +115,8 @@
                     method: "GET"
                 })
                 .then(function(gameData) {
+                    console.log("populating game list");
+                    console.log(gameData);
 
                     for (var i = 0; i < gameData.length; i++) {
                         // for each game

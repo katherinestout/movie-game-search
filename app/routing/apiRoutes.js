@@ -21,7 +21,7 @@ module.exports = function(app) {
             request(queryUrl, function(error, response, body) {
                 // If the request is successful
                 if (!error && response.statusCode === 200) {
-                    console.log(body);
+                    // console.log(body);
                     res.json(JSON.parse(body));
                 }
             });
@@ -43,7 +43,7 @@ module.exports = function(app) {
             search: searchTerm
         }).then(response => {
             // response.body contains the parsed JSON response to this query
-            console.log(response.body);
+            // console.log(response.body);
             res.json(response.body);
 
         }).catch(error => {
