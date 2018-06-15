@@ -68,3 +68,24 @@ main {
       background-color: white;
       width: 70%;
   }
+
+  /* .animated {
+      animation-duration: 5s;
+      animation-delay: 2s;
+      animation-iteration-count: 1;
+  } */
+
+  #katie {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    animation-name: katie;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes example {
+    0%   {left:0px;}
+    50%  {left:200px;}
+    100% {left:500px;}
+}
