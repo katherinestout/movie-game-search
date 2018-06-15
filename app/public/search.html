@@ -12,50 +12,23 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <!-- jQuery link -->
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <style type="text/css">
-
-            #games-view {
-                overflow-x: scroll;
-                overflow-y: hidden;
-                white-space: nowrap;
-                width: auto;
-                height: auto;
-            }
-                .game {
-                  display: inline-block; 
-                }
-            }
-            
-            #movies-view {
-                overflow-x: scroll;
-                overflow-y: hidden;
-                white-space: nowrap;
-                width: auto;
-                height: auto;
-              }
-                .movie {
-                  display: inline-block;
-                 
-                }
-              }
-            </style>
     </head>
 
     <body>
-        <div class="container">
+        <div class="main">
             <header>
-                <a href="/*"><h1>Rotten Potatoes</h1></a>
-                    <p>"Because just watching the movie is not bad enough..."</p>
+                <img src="images/rotten-potatoes-title.jpeg" class="title" alt="Rotten Potatoes Title">
             </header>
-
+                
             <form>
                 <div class="row">
                     <div class="input-field col s6">
                         <input placeholder="" id="search-input" type="text" class="validate">
-                        <label for="game_title">Enter a series/franchise</label>
+                        <label for="game_title" id="input-label">Enter a series/franchise</label>
                     </div>
                 </div>
                         
@@ -64,12 +37,30 @@
                 </button>
             </form>
 
-            <div id="game-list">
+            <div id="movie-list">
             </div>  
 
-            <div id="movie-list">
+            <div id="game-list">
             </div>
         </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>                      
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Copyright Text
+                </div>
+            </div>
+        </footer>
+
         <!-- javascript -->
         <script>
             
