@@ -96,7 +96,8 @@
 
                         // get movie title
                         var title = $("<p>").text(movie.Title);
-                        
+                        title.addClass("item-title");
+
                         // get movie poster
                         var poster = $("<img>").attr("src", movie.Poster);
 
@@ -127,6 +128,7 @@
 
                         // get movie title
                         var title = $("<p>").text(game.name);
+                        title.addClass("item-title");
                         
                         // get movie poster
                         var poster = $("<img>").attr("src", game.cover.url);
