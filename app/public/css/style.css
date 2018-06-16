@@ -9,6 +9,10 @@ body {
     cursor: url("../images/potato.png"), auto;
 }
 
+a:hover {
+    cursor: url("../images/happy-potato.png"), auto;
+}
+
 main {
     flex: 1 0 auto;
   }
