@@ -12,8 +12,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         <!-- jQuery link -->
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-        <!-- animate.css link
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"> -->
+        <!-- animate.css link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
@@ -29,11 +29,21 @@
                 <a class="waves-effect waves-light btn-large search-button" href="/search"><i class="material-icons left" >local_movies</i>Search Movies and/or Video Games<i class="material-icons right" >videogame_asset</i></a>
             </div>
 
-            <img src="images/katie.gif" id="katie" alt="Katie Cartoon">
-
-            <div>
-                <img src="images/christina.gif" id="christina" alt="Christina cartoon">
-            </div>
+            <div class="row intro animated slideInLeft">
+                <div class="col s6 text-block">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatem reprehenderit qui. 
+                    Sunt, assumenda nemo eveniet dolorem, laboriosam unde aperiam sint consequatur eos magnam provident 
+                    necessitatibus fugit nostrum deserunt est?</p>
+                </div>
+                
+                <div class="col s5">
+                    <img src="images/katie.gif" id="katie" alt="Katie Cartoon">
+                </div>
+            </div>    
+            
+            <!-- <div>
+                <img src="images/christina-tomb-raider.gif" id="christina" alt="Christina cartoon">
+            </div> -->
         </div>    
 
         <footer class="page-footer">
@@ -52,5 +62,12 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+        $(".intro").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+            $("#katie").attr("src", "images/katie.png").height(325);
+
+        });
+        </script>
     </body>
 </html>
