@@ -8,10 +8,7 @@
         
         <!-- Compiled and minified Materialize CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
-        <!-- Compiled and minified Materialize JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-        <!-- jQuery link -->
-        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    
         <!-- animate.css link -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,25 +22,49 @@
                 <img src="images/rotten-potatoes-title.jpeg" class="title" alt="Rotten Potatoes Title">
             </header>
             
-            <div>
+            <div class="go-to-search">
+                <img src="images/coin.gif" class="coin">
                 <a class="waves-effect waves-light btn-large search-button" href="/search"><i class="material-icons left" >local_movies</i>Search Movies and/or Video Games<i class="material-icons right" >videogame_asset</i></a>
+                <img src="images/coin.gif" class="coin">
             </div>
 
             <div class="row intro animated slideInLeft">
                 <div class="col s6 text-block">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatem reprehenderit qui. 
-                    Sunt, assumenda nemo eveniet dolorem, laboriosam unde aperiam sint consequatur eos magnam provident 
-                    necessitatibus fugit nostrum deserunt est?</p>
+                    <p>Finished watching a movie and still want more? Completed a video game and curious about 
+                        the characters' origin story? Want to escape everyday life and immerse yourself in a 
+                        fictional world? Just have a lot of free time? Enter a movie, video game, or general 
+                        interest and Rotten Potatoes will connect you with any movies and video games associated 
+                        with your search term.
+                    </p>
                 </div>
                 
                 <div class="col s5">
                     <img src="images/katie.gif" id="katie" alt="Katie Cartoon">
                 </div>
             </div>    
-            
-            <!-- <div>
-                <img src="images/christina-tomb-raider.gif" id="christina" alt="Christina cartoon">
-            </div> -->
+
+            <div class="carousel carousel-slider">
+                <div class="carousel-item">
+                    <img src="images/street-fighter.jpeg">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="images/tmnt.jpeg">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="images/tomb-raider.jpeg">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/mario-bros.jpeg">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/lego-batman.jpeg">
+                </div>
+            </div>
+
         </div>    
 
         <footer class="page-footer">
@@ -58,15 +79,33 @@
                 
             <div class="footer-copyright">
                 <div class="container">
-                    © 2018 Copyright Text
+                    © 2018 Rotten Potatoes
                 </div>
             </div>
         </footer>
-
+        
+        <!-- jQuery link -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <!-- Compiled and minified Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        
         <script>
+        
+        // Add Katie animation
         $(".intro").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
             $("#katie").attr("src", "images/katie.png").height(325);
+        });
 
+        // Set up carousel
+        $(document).ready(function(){
+            $(".carousel.carousel-slider").carousel({
+                padding: 200
+            });
+            autoplay()
+            function autoplay() {
+                $(".carousel").carousel("next");
+                setTimeout(autoplay, 4500);
+            }
         });
         </script>
     </body>

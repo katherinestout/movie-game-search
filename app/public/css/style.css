@@ -20,7 +20,7 @@ main {
 .title {
     width: 85%;
     margin-left: 5%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 #movies-view {
@@ -33,7 +33,7 @@ main {
 
 .movie {
     display: inline-block; 
-    }
+}
 
 #games-view {
     overflow-x: scroll;
@@ -54,7 +54,6 @@ main {
 .search-button {
 background-color: #2f91dd;
 margin-bottom: 50px;
-margin-left: 25%;
 font-size: 24px;
 }
 
@@ -66,7 +65,6 @@ margin: 10px;
 #input-label {
     font-size: 24px;
     margin: 5px;
-    
 }
 
 .input-field {
@@ -93,12 +91,6 @@ margin: 10px;
     animation-iteration-count: infinite;
     margin-left: 0px;
 }
-/* 
-@keyframes example {
-    0%   {left:0px;}
-    50%  {left:200px;}
-    100% {left:500px;}
-} */
 
 .intro {
     margin-left: 10%;
@@ -134,4 +126,22 @@ margin: 10px;
 
 .item-title {
     font-size: 24px;
+}
+
+.carousel {
+    width: 85%;
+    margin-left: 5%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-top: solid 5px red;
+}
+
+.coin {
+    width: 60px;
+    display: inline-block;
+}
+
+.go-to-search {
+    margin-left: 15%;
+    margin-bottom: 25px;
 }
