@@ -38,9 +38,11 @@
             </form>
 
             <div id="movie-list">
+                <h2>Movies</h2>
             </div>  
 
             <div id="game-list">
+                <h2>Games</h2>
             </div>
         </div>
 
@@ -131,7 +133,7 @@
                         title.addClass("item-title");
                         
                         // get movie poster
-                        var poster = $("<img>").attr("src", game.cover.url);
+                        var poster = $("<img>").attr("src", game.cover.url).addClass("poster");
 
                         // append title and poseter to gameElem
                         gameElem.append(poster, title);

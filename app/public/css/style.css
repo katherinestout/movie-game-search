@@ -66,10 +66,16 @@ margin: 10px;
 #input-label {
     font-size: 24px;
     margin: 5px;
+    
+}
+
+.input-field {
+    background-color: white;
+    margin-left: 10%;
 }
 
 .page-footer {
-background-color: #2f91dd;
+    background-color: #2f91dd;
 }
 
 .animated {
@@ -107,3 +113,25 @@ background-color: #2f91dd;
     margin-right: 0px;
 }
 
+#movie-list {
+    margin-left: 10%;
+}
+
+#game-list {
+    margin-left: 10%;
+}
+
+.movie {
+    padding: 15px;
+}
+.game {
+    padding: 15px;
+}
+
+.poster {
+    height: 200px;
+}
+
+.item-title {
+    font-size: 24px;
+}
