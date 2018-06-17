@@ -49,6 +49,21 @@ module.exports = function(app) {
         }).catch(error => {
             throw error;
         });
+        
+    });
+
+    app.get("/api/game-image/:cloudinary_id", function(req, res) {
+        var cloudinaryId = req.params.cloudinary_id;
+        console.log("cloudinary_id for image: " + cloudinaryId);
+
+        // games   
+        const client = igdb(IGDB_KEY);
+
+        // get high res image from cloudinary_id 
+        res.json(client.image({
+            cloudinary_id: cloudinaryId
+        }, 'cover_big', 'jpg'));
+    
     });
 
     app.get("/api/movie-media/:title", function(req, res) {
