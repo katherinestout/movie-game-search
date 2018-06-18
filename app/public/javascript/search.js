@@ -1,7 +1,15 @@
+// Add Christina animation
+$(".hurry").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+    $("#christina").attr("src", "images/christina.png").height(325);
+});
 
-
+// handle search button press
 $("#search-btn").on("click", function(event) {
     event.preventDefault();
+
+    $("#christina").hide();
+    $("#movie-list").show();
+    $("#game-list").show();
 
     var searchTerm = $("#search-input").val().trim();
 
@@ -87,5 +95,4 @@ $("#search-btn").on("click", function(event) {
             });
         }
     });
-
 });
