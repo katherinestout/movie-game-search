@@ -16,7 +16,7 @@ module.exports = function(app) {
         console.log("search term: " + searchTerm);
 
         // movies
-        var queryUrl = "http://www.omdbapi.com/?s=" + searchTerm + "&y=&plot=short&apikey=" + OMDB_KEY;
+        var queryUrl = "http://www.omdbapi.com/?s=" + searchTerm + "&type=movie&y=&plot=short&apikey=" + OMDB_KEY;
             console.log("omdb query url: " + queryUrl);
             request(queryUrl, function(error, response, body) {
                 // If the request is successful
@@ -54,7 +54,7 @@ module.exports = function(app) {
 
     app.get("/api/game-image/:cloudinary_id", function(req, res) {
         var cloudinaryId = req.params.cloudinary_id;
-        console.log("cloudinary_id for image: " + cloudinaryId);
+        // console.log("cloudinary_id for image: " + cloudinaryId);
 
         // games   
         const client = igdb(IGDB_KEY);
@@ -66,7 +66,7 @@ module.exports = function(app) {
     
     });
 
-    app.get("/api/movie-media/:title", function(req, res) {
+    app.get("/api/youtube/:title", function(req, res) {
         
         var title = req.params.title;
         console.log("youtube/trailer search title: " + title);
@@ -85,12 +85,6 @@ module.exports = function(app) {
 
     });
 
-    app.get("api/game-media/:title", function(req, res) {
-
-        var title = req.params.title;
-        console.log("twitch/let's play search title: " + title);
-
-    });
 };
 
 

@@ -23,7 +23,7 @@ main {
     margin-bottom: 30px;
 }
 
-#movies-view {
+#movie-list {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -35,7 +35,7 @@ main {
     display: inline-block; 
 }
 
-#games-view {
+#game-list {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -82,7 +82,8 @@ margin: 10px;
       animation-iteration-count: 1;
   }
 
-  #katie {
+#katie {
+
     height: 400px;
     position: relative;
     animation-name: katie;
@@ -118,8 +119,13 @@ margin: 10px;
     padding: 15px;
 }
 
-.poster {
+/* .poster {
     height: 200px;
+} */
+
+/* poster corresponds to movie and cover corresponds to game */
+.poster, .cover {
+    width: 300px;
 }
 
 .item-title {
