@@ -95,4 +95,18 @@ $("#search-btn").on("click", function(event) {
             });
         }
     });
+
+    // function triggers when movie item is clicked, provides movie info and Movie Trailer video in a div at top of page
+    $(document).on("click", ".game", showMovieInfoVideo);
+
+    function showMovieInfoVideo() {
+
+    }
+
+    // function triggers when game is clicked, provides game info and "Let's Play" video for each game in a div at top of page
+    $(document).on("click", ".item", showGameInfoVideo);
+
+    function showGameInfoVideo() {
+        
+    }
 });
