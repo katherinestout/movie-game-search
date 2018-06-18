@@ -66,7 +66,7 @@ module.exports = function(app) {
     
     });
 
-    app.get("/api/movie-media/:title", function(req, res) {
+    app.get("/api/youtube/:title", function(req, res) {
         
         var title = req.params.title;
         console.log("youtube/trailer search title: " + title);
@@ -85,12 +85,6 @@ module.exports = function(app) {
 
     });
 
-    app.get("api/game-media/:title", function(req, res) {
-
-        var title = req.params.title;
-        console.log("twitch/let's play search title: " + title);
-
-    });
 };
 
 
