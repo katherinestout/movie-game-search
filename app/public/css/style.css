@@ -23,7 +23,7 @@ main {
     margin-bottom: 30px;
 }
 
-#movie-list {
+#movies-view {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -35,7 +35,7 @@ main {
     display: inline-block; 
 }
 
-#game-list {
+#games-view {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
