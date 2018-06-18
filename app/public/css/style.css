@@ -83,13 +83,9 @@ margin: 10px;
   }
 
   #katie {
-    /* width: 400px; */
     height: 400px;
     position: relative;
     animation-name: katie;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    margin-left: 0px;
 }
 
 .intro {
@@ -107,10 +103,12 @@ margin: 10px;
 
 #movie-list {
     margin-left: 10%;
+    display: none;
 }
 
 #game-list {
     margin-left: 10%;
+    display: none;
 }
 
 .movie {
@@ -144,4 +142,14 @@ margin: 10px;
 .go-to-search {
     margin-left: 15%;
     margin-bottom: 25px;
+}
+
+#christina {
+    height: 400px;
+    position: relative;
+    animation-name: christina;
+}
+
+.results {
+    display: none;
 }
