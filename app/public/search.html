@@ -77,8 +77,12 @@
                 // *** important to use "-" for our external apis
                 searchTerm = searchTerm.replace(/\s+/g, "-").toLowerCase();
                 console.log("user input search term: " + searchTerm);
+
+                // empty movie-list and game-list
+                $("#movie-list").empty();
+                $("#game-list").empty();
                 
-                // populate movie list
+                // populate movie-list
                 $.ajax({
                     url: currentURL + "/api/movie-list/" + searchTerm,
                     method: "GET"
@@ -100,7 +104,7 @@
                         title.addClass("item-title");
 
                         // get movie poster
-                        var poster = $("<img>").attr("src", movie.Poster);
+                        var poster = $("<img>").attr("src", movie.Poster).addClass("poster");
 
                         // append title and poster to movieElem
                         movieElem.append(poster, title);
@@ -111,7 +115,7 @@
                     }
                 });
 
-                // populate game list 
+                // populate game-list 
                 $.ajax({
                     url: currentURL + "/api/game-list/" + searchTerm, 
                     method: "GET"
@@ -131,15 +135,22 @@
                         var title = $("<p>").text(game.name);
                         title.addClass("item-title");
                         
-                        // get movie poster
-                        var poster = $("<img>").attr("src", game.cover.url).addClass("poster");
+                        var cloudinaryId = game.cover.cloudinary_id;
+                        
+                        $.ajax({
+                            url: currentURL + "/api/game-image/" + cloudinaryId,
+                            method: "GET"
+                        })
+                        .then(function(coverURL) {
+                            // get movie poster
+                            var cover = $("<img>").attr("src", coverURL).addClass("cover");
 
-                        // append title and poseter to gameElem
-                        gameElem.append(poster, title);
+                            // append title and poseter to gameElem
+                            gameElem.append(cover, title);
 
-                        // append to game-list div
-                        $("#game-list").append(gameElem);
-
+                            // append to game-list div
+                            $("#game-list").append(gameElem);
+                        });
                     }
                 });
 

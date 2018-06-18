@@ -23,7 +23,7 @@ main {
     margin-bottom: 30px;
 }
 
-#movies-view {
+#movie-list {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -35,7 +35,7 @@ main {
     display: inline-block; 
 }
 
-#games-view {
+#game-list {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
@@ -82,7 +82,7 @@ margin: 10px;
       animation-iteration-count: 1;
   }
 
-  #katie {
+#katie {
     /* width: 400px; */
     height: 400px;
     position: relative;
