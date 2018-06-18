@@ -100,15 +100,15 @@
                         var movieElem = $("<div>").addClass("movie");
 
                         // get movie title
-                        var title = $("<p>").text(movie.Title);
-                        title.addClass("item-title");
+                        // var title = $("<p>").text(movie.Title);
+                        // title.addClass("item-title");
 
                         // get movie poster
                         var poster = $("<img>").attr("src", movie.Poster).addClass("poster");
 
                         // append title and poster to movieElem
-                        movieElem.append(poster, title);
-
+                        // movieElem.append(poster, title); 
+                        movieElem.append(poster);
                         // append to movie-list div
                         $("#movie-list").append(movieElem);
 
@@ -132,8 +132,8 @@
                         var gameElem = $("<div>").addClass("game");
 
                         // get movie title
-                        var title = $("<p>").text(game.name);
-                        title.addClass("item-title");
+                        // var title = $("<p>").text(game.name);
+                        // title.addClass("item-title");
                         
                         var cloudinaryId = game.cover.cloudinary_id;
                         
@@ -146,8 +146,8 @@
                             var cover = $("<img>").attr("src", coverURL).addClass("cover");
 
                             // append title and poseter to gameElem
-                            gameElem.append(cover, title);
-
+                            // gameElem.append(cover, title);
+                            gameElem.append(cover);    
                             // append to game-list div
                             $("#game-list").append(gameElem);
                         });

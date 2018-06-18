@@ -120,8 +120,13 @@ margin: 10px;
     padding: 15px;
 }
 
-.poster {
+/* .poster {
     height: 200px;
+} */
+
+/* poster corresponds to movie and cover corresponds to game */
+.poster, .cover {
+    width: 300px;
 }
 
 .item-title {
