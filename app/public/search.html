@@ -69,104 +69,13 @@
                     © 2018 Rotten Potatoes
                 </div>
             </div>
-        
-        <!-- javascript -->
-        <script type="text/javascript" src="javascript/search.js"></script>
 
         <!-- jQuery link -->
         <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
         
-         <!-- javascript -->
-        <script>
-
-        // Add Christina animation
-        $(".hurry").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
-            $("#christina").attr("src", "images/christina.png").height(325);
-        });
-            
-        // handle search button press
-        $("#search-btn").on("click", function(event) {
-            event.preventDefault();
-
-            $("#christina").hide();
-            $("#movie-list").show();
-            $("game-list").show();
-
-            var searchTerm = $("#search-input").val().trim();
-
-            // get the location of the root page 
-            var currentURL = window.location.origin;
-
-            // *** important to use "-" for our external apis
-            searchTerm = searchTerm.replace(/\s+/g, "-").toLowerCase();
-            console.log("user input search term: " + searchTerm);
-                
-            // populate movie list
-            $.ajax({
-                url: currentURL + "/api/movie-list/" + searchTerm,
-                method: "GET"
-            })
-            .then(function(movieData) {
-                console.log("populating movie list");
-                console.log(movieData);
-
-                for (var i = 0; i < movieData.Search.length; i++) {
-                    // for each movie 
-                    var movie = movieData.Search[i];
-                    console.log(movieData.Search[i]);
-
-                    // create div for game element and assign game class
-                    var movieElem = $("<div>").addClass("movie");
-
-                    // get movie title
-                    var title = $("<p>").text(movie.Title);
-                    title.addClass("item-title");
-
-                    // get movie poster
-                    var poster = $("<img>").attr("src", movie.Poster);
-
-                    // append title and poster to movieElem
-                    movieElem.append(poster, title);
-
-                    // append to movie-list div
-                    $("#movie-list").append(movieElem);
-
-                }
-            });
-
-            // populate game list 
-            $.ajax({
-                url: currentURL + "/api/game-list/" + searchTerm, 
-                method: "GET"
-            })
-            .then(function(gameData) {
-                console.log("populating game list");
-                console.log(gameData);
-
-                for (var i = 0; i < gameData.length; i++) {
-                    // for each game
-                    var game = gameData[i];
-
-                    // create div for game element and assign game class
-                    var gameElem = $("<div>").addClass("game");
-
-                    // get movie title
-                    var title = $("<p>").text(game.name);
-                    title.addClass("item-title");
-                        
-                    // get movie poster
-                    var poster = $("<img>").attr("src", game.cover.url).addClass("poster");
-
-                    // append title and poseter to gameElem
-                    gameElem.append(poster, title);
-
-                    // append to game-list div
-                    $("#game-list").append(gameElem);
-
-                }
-            });
-        });
-        </script>
+        <!-- javascript -->
+        <script type="text/javascript" src="javascript/search.js"></script>
+        
     </body>
 </html>
