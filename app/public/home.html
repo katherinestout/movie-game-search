@@ -99,6 +99,37 @@
         $(".intro").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
             $("#katie").attr("src", "images/katie.png").height(325);
         });
+
+        </div>    
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>                      
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Rotten Potatoes
+                </div>
+            </div>
+        </footer>
+        
+        <!-- jQuery link -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <!-- Compiled and minified Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        
+        <script>
+        
+        // Add Katie animation
+        $(".intro").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+            $("#katie").attr("src", "images/katie.png").height(325);
+        });
         // Set up carousel
         $(document).ready(function(){
             $(".carousel.carousel-slider").carousel({
