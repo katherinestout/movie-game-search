@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rotten Potatoes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Compiled and minified Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+    
+        <!-- animate.css link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+
+    <body>
+        <div class="main">
+            <header>
+                <img src="images/rotten-potatoes-title.jpeg" class="title" alt="Rotten Potatoes Title">
+            </header>
+            
+            <div class="go-to-search">
+                <img src="images/coin.gif" class="coin">
+                <a class="waves-effect waves-light btn-large search-button" href="/search"><i class="material-icons left" >local_movies</i>Search Movies and/or Video Games<i class="material-icons right" >videogame_asset</i></a>
+                <img src="images/coin.gif" class="coin">
+            </div>
+
+            <div class="row intro animated slideInLeft">
+                <div class="col s6 text-block">
+                    <p>Finished watching a movie and still want more? Completed a video game and curious about 
+                        the characters' origin story? Want to escape everyday life and immerse yourself in a 
+                        fictional world? Just have a lot of free time? Enter a movie, video game, or general 
+                        interest and Rotten Potatoes will connect you with any movies and video games associated 
+                        with your search term.
+                    </p>
+                </div>
+                
+                <div class="col s5">
+                    <img src="images/katie.gif" id="katie" alt="Katie Cartoon">
+                </div>
+            </div>    
+
+            <div class="carousel carousel-slider">
+                <div class="carousel-item">
+                    <img src="images/street-fighter.jpeg">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="images/tmnt.jpeg">
+                </div>
+                
+                <div class="carousel-item">
+                    <img src="images/tomb-raider.jpeg">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/mario-bros.jpeg">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/lego-batman.jpeg">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="images/prince-of-persia.jpeg">
+                </div>
+            </div>
+
+        </div>    
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>                      
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Rotten Potatoes
+                </div>
+            </div>
+        </footer>
+        
+        <!-- jQuery link -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <!-- Compiled and minified Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        
+        <script>
+        
+        // Add Katie animation
+        $(".intro").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+            $("#katie").attr("src", "images/katie.png").height(325);
+        });
+        // Set up carousel
+        $(document).ready(function(){
+            $(".carousel.carousel-slider").carousel({
+                padding: 200
+            });
+            autoplay()
+            function autoplay() {
+                $(".carousel").carousel("next");
+                setTimeout(autoplay, 4500);
+            }
+        });
+        </script>
+    </body>
+</html>

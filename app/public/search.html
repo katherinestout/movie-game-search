@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rotten Potatoes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- jQuery link -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <!-- Compiled and minified Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <!-- Compiled and minified Materialize JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+
+    <body>
+        <div class="main">
+            <header>
+                <a href="./"><img src="images/rotten-potatoes-title.jpeg" class="title" alt="Rotten Potatoes Title"></a>
+            </header>
+                
+            <form>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="" id="search-input" type="text" class="validate">
+                        <label for="game_title" id="input-label">Enter a series/franchise</label>
+                    </div>
+                </div>
+                        
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">Search
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+
+            <div id="movie-list">
+                <h2>Movies</h2>
+            </div>  
+
+            <div id="game-list">
+                <h2>Games</h2>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>                      
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Rotten Potatoes
+                </div>
+            </div>
+        </footer>
+
+        <!-- javascript -->
+        <script>
+            
+            // handle search button press
+            $("#search-btn").on("click", function(event) {
+                event.preventDefault();
+                var searchTerm = $("#search-input").val().trim();
+                // get the location of the root page 
+                var currentURL = window.location.origin;
+                // *** important to use "-" for our external apis
+                searchTerm = searchTerm.replace(/\s+/g, "-").toLowerCase();
+                console.log("user input search term: " + searchTerm);
+                
+                // populate movie list
+                $.ajax({
+                    url: currentURL + "/api/movie-list/" + searchTerm,
+                    method: "GET"
+                })
+                .then(function(movieData) {
+                    console.log("populating movie list");
+                    console.log(movieData);
+                    for (var i = 0; i < movieData.Search.length; i++) {
+                        // for each movie 
+                        var movie = movieData.Search[i];
+                        console.log(movieData.Search[i]);
+                        // create div for game element and assign game class
+                        var movieElem = $("<div>").addClass("movie");
+                        // get movie title
+                        var title = $("<p>").text(movie.Title);
+                        title.addClass("item-title");
+                        // get movie poster
+                        var poster = $("<img>").attr("src", movie.Poster);
+                        // append title and poster to movieElem
+                        movieElem.append(poster, title);
+                        // append to movie-list div
+                        $("#movie-list").append(movieElem);
+                    }
+                });
+                // populate game list 
+                $.ajax({
+                    url: currentURL + "/api/game-list/" + searchTerm, 
+                    method: "GET"
+                })
+                .then(function(gameData) {
+                    console.log("populating game list");
+                    console.log(gameData);
+                    for (var i = 0; i < gameData.length; i++) {
+                        // for each game
+                        var game = gameData[i];
+                        // create div for game element and assign game class
+                        var gameElem = $("<div>").addClass("game");
+                        // get movie title
+                        var title = $("<p>").text(game.name);
+                        title.addClass("item-title");
+                        
+                        // get movie poster
+                        var poster = $("<img>").attr("src", game.cover.url).addClass("poster");
+                        // append title and poseter to gameElem
+                        gameElem.append(poster, title);
+                        // append to game-list div
+                        $("#game-list").append(gameElem);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
