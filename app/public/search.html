@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rotten Potatoes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Compiled and minified Materialize CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <!-- Compiled and minified Materialize JavaScript -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    </head>
+
+    <body>
+        <div class="main">
+            <header>
+                <a href="./"><img src="images/rotten-potatoes-title.jpeg" class="title" alt="Rotten Potatoes Title"></a>
+            </header>
+                
+            <form>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="" id="search-input" type="text" class="validate">
+                        <label for="game_title" id="input-label">Enter a series/franchise</label>
+                    </div>
+                </div>
+                        
+                <button class="btn waves-effect waves-light" type="submit" name="action" id="search-btn">Search
+                    <i class="material-icons right">send</i>
+                </button>
+            </form>
+
+            <div class="animated slideInRight hurry">
+                <img src="images/christina.gif" id="christina" alt="Christina Cartoon">
+            </div>
+
+            <div class="row results">
+                <div id="information" class="col s4">
+                </div>
+
+                <div id="videos" class="col s8">
+                </div>
+            </div>
+
+            <div id="movie-list">
+                <h2>Movies</h2>
+            </div>  
+
+            <div id="game-list">
+                <h2>Games</h2>
+            </div>
+        </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>                      
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2018 Rotten Potatoes
+                </div>
+            </div>
+
+        <!-- jQuery link -->
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+        
+        <!-- javascript -->
+        <script type="text/javascript" src="javascript/search.js"></script>
+        
+    </body>
+</html>
