@@ -1,6 +1,6 @@
-// Add Christina animation
+// Christina animation
 $(".hurry").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
-    $("#christina").attr("src", "images/christina.png").height(325);
+    $("#christina").attr("src", "images/christina.png").height(350);
 });
 
 // handle search button press
@@ -53,7 +53,6 @@ $("#search-btn").on("click", function(event) {
             movieElem.append(poster);
             // append to movie-list div
             $("#movie-list").append(movieElem);
-
         }
     });
 
