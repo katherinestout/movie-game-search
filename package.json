@@ -27,6 +27,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "igdb-api-node": "^3.1.7",
+    "imdb": "^1.1.0",
     "npm": "^6.1.0",
     "path": "^0.12.7",
     "request": "^2.87.0",
