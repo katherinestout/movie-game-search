@@ -67,6 +67,10 @@ background-color: #2f91dd;
     margin: 5px;
 }
 
+#yt-video {
+    margin-left: 10%;
+}
+
 .input-field {
     background-color: white;
 }
@@ -98,6 +102,10 @@ background-color: #2f91dd;
     border: solid 5px red;
     padding: 25px;
     margin-right: 0px;
+}
+
+#search-container {
+    margin-left: 10%;
 }
 
 #movie-list {
