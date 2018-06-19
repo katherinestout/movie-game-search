@@ -79,38 +79,31 @@ $("#search-btn").on("click", function(event) {
             // create div for game element and assign game class
             var gameElem = $("<div>").addClass("game");
             gameElem.attr("data-title", game.name);
+            gameElem.attr("data-cloudinary-id", cloudinaryId);
 
             // get movie poster
-            var cover = $("<img>").addClass("cover");
-
-            // append title and poseter to gameElem
-            gameElem.append(cover);    
+            getCoverURL(cloudinaryId);   
 
             // append to game-list div
             $("#game-list").append(gameElem);
 
-            
         } 
-
-        getHighResCover();
-     
     });
 
-    
-    function getHighResCover() {
+    function getCoverURL(cloudinaryId) {
         $.ajax({
-            url: currentURL + "/api/game-image/" + cloudinaryId,
+            url: currentURL + "/api/game-image/" +  cloudinaryId,
             method: "GET"
         })
         .then(function(coverURL) {
-    
-            // set high-res movie poster
+            // add movie poster
+            var cover = $("<img>").addClass("cover");
             cover.attr("src", coverURL);
-            
+
+            $("[data-cloudinary-id='" + cloudinaryId +  "']").append(cover);
         });
     }
 
-    
 
     // function triggers when movie item is clicked, provides movie info and Movie Trailer video in a div at top of page
     $(document).on("click", ".movie", showMovieInfoVideo);
