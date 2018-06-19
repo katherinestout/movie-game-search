@@ -118,6 +118,11 @@ background-color: #2f91dd;
     display: none;
 }
 
+#movie-header, #game-header {
+    margin-left: 10%;
+    display: none;
+}
+
 .movie {
     padding: 15px;
 }
