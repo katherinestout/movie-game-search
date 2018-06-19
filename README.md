@@ -28,10 +28,10 @@ We used different technologies such as animations.cs, jQuery, CSS, Javascript, M
 
 ## Authors
 
-* **Nima Chenari** - *Initial work* - [nchenari](https://github.com/nchenari)
+* **Nima Chenari** - *back-end* - [nchenari](https://github.com/nchenari)
 
-* **Christina Rust** - *Initial work* - [yirklum](https://github.com/yirklum)
+* **Christina Rust** - *front-end and illustrations* - [yirklum](https://github.com/yirklum)
 
-* **Katherine Stout** - *Initial work* - [katherinestout](https://github.com/katherinestout)
+* **Katherine Stout** - *back-end and front-end* - [katherinestout](https://github.com/katherinestout)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
