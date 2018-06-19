@@ -16,8 +16,8 @@ module.exports = function(app) {
         console.log("search term: " + searchTerm);
 
         // movies
-        var queryUrl = "http://www.omdbapi.com/?s=" + searchTerm + "&y=&plot=short&apikey=" + OMDB_KEY;
-            console.log("omdb query url: " + queryUrl);
+        var queryUrl = "http://www.omdbapi.com/?s=" + searchTerm + "&type=movie&y=&plot=short&apikey=" + OMDB_KEY;
+            // console.log("omdb query url: " + queryUrl);
             request(queryUrl, function(error, response, body) {
                 // If the request is successful
                 if (!error && response.statusCode === 200) {
@@ -40,10 +40,11 @@ module.exports = function(app) {
             limit: 10,
             offset: 0,
             order: 'popularity:desc',
+            videoEmbeddable: true,
             search: searchTerm
         }).then(response => {
-            // response.body contains the parsed JSON response to this query
-            // console.log(response.body);
+
+            //console.log(response.body);
             res.json(response.body);
 
         }).catch(error => {
@@ -54,7 +55,7 @@ module.exports = function(app) {
 
     app.get("/api/game-image/:cloudinary_id", function(req, res) {
         var cloudinaryId = req.params.cloudinary_id;
-        console.log("cloudinary_id for image: " + cloudinaryId);
+        // console.log("cloudinary_id for image: " + cloudinaryId);
 
         // games   
         const client = igdb(IGDB_KEY);
@@ -66,17 +67,18 @@ module.exports = function(app) {
     
     });
 
-    app.get("/api/movie-media/:title", function(req, res) {
+    app.get("/api/yt/:title", function(req, res) {
         
         var title = req.params.title;
         console.log("youtube/trailer search title: " + title);
 
         var options = {
-            maxResults: 10,
-            key: YOUTUBE_KEY
+            maxResults: 1,
+            key: YOUTUBE_KEY,
+            type: "video" 
         };
 
-        ytsearch('jsconf', options, function(err, results) {
+        ytsearch(title, options, function(err, results) {
             if (err) return console.log(err);
 
             console.log(results);
@@ -85,12 +87,6 @@ module.exports = function(app) {
 
     });
 
-    app.get("api/game-media/:title", function(req, res) {
-
-        var title = req.params.title;
-        console.log("twitch/let's play search title: " + title);
-
-    });
 };
 
 

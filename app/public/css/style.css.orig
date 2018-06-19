@@ -60,6 +60,7 @@ font-size: 24px;
 
 #search-btn {
 background-color: #2f91dd;
+margin: 10px;
 }
 
 #input-label {
@@ -67,12 +68,10 @@ background-color: #2f91dd;
     margin: 5px;
 }
 
-#yt-video {
-    margin-left: 10%;
-}
-
 .input-field {
     background-color: white;
+    margin-left: 10%;
+   
 }
 
 .page-footer {
@@ -86,6 +85,7 @@ background-color: #2f91dd;
   }
 
 #katie {
+
     height: 400px;
     position: relative;
     animation-name: katie;
@@ -104,10 +104,6 @@ background-color: #2f91dd;
     margin-right: 0px;
 }
 
-#search-container {
-    margin-left: 10%;
-}
-
 #movie-list {
     margin-left: 10%;
     display: none;
@@ -121,10 +117,13 @@ background-color: #2f91dd;
 .movie {
     padding: 15px;
 }
-
 .game {
     padding: 15px;
 }
+
+/* .poster {
+    height: 200px;
+} */
 
 /* poster corresponds to movie and cover corresponds to game */
 .poster, .cover {
@@ -139,7 +138,7 @@ background-color: #2f91dd;
     width: 85%;
     margin-left: 5%;
     margin-top: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     border-top: solid 5px red;
 }
 
@@ -151,6 +150,13 @@ background-color: #2f91dd;
 .go-to-search {
     margin-left: 15%;
     margin-bottom: 25px;
+}
+
+#christina {
+    height: 400px;
+    position: relative;
+    animation-name: christina;
+    margin-left: 5%;
 }
 
 .results {
@@ -179,96 +185,9 @@ background-color: #2f91dd;
     from, to { border-color: transparent }
     50% { border-color: orange; }
   }
-
-/* Animated cat */
-.banner {
-    display: block;
-    width: 100%;
-    height: 200px;
-    position: relative;
-    margin-left: 0px;
-}
-
-.wrapper {
-    width: 100%;
-    -webkit-animation: flying-cat 5s linear infinite;
-    animation: flying-cat 5s linear infinite;
-}
-
-.flying-cat {
-    position: absolute;
-    left: -300px;
-    width: 100px;
-    height: 100px;
-    transform: translate(0px,100px,20px);
-}
-
-@keyframes flying-cat {
-    0% { transform: translate(0%, -25px) }
-    100% { transform: translate(175%, 100px) }
-}
-
-footer {
-    font-size: 24px;
-    border-top: solid 3px red;
-}
-
-.copyright {
-    margin-left: 35%;
-}
-
-/* Christina animation */
-.prompt {
-    display: block;
-    width: 100%;
-    height: 200px;
-    position: relative;
-    margin-right: 0px;
-    margin-bottom: 200px;
-}
-
-.animation-wrapper {
-    width: 100%;
-    -webkit-animation: christina 10s linear infinite;
-    animation: christina 10s linear infinite;
-}
-
-.christina {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    transform: translate(0px,100px,20px);
-}
-
-@keyframes christina {
-    0% { transform: translate(100%, 0px) }
-    100% { transform: translate(-25%, 0px) }
-}
-
-/* Nima animation */
-.nima {
-    display: none;
-    height: 300px;
-}
-
-.nima.animated {
-    animation-duration: 5s;
-    animation-delay: 2s;
+  
+.hurry.animated {
+    animation-duration: 9s;
+    animation-delay: 1s;
     animation-iteration-count: 1;
-}
-
-.poster.animated {
-    animation-duration: 7s;
-    animation-delay: 5s;
-    animation-iteration-count: 1;
-}
-
-.cover.animated {
-    animation-duration: 7s;
-    animation-delay: 5s;
-    animation-iteration-count: 1;
-}
-
-form {
-    margin-left: 10%;
 }
