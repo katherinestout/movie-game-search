@@ -81,26 +81,36 @@ $("#search-btn").on("click", function(event) {
             gameElem.attr("data-title", game.name);
 
             // get movie poster
-            var cover = $("<img>");
+            var cover = $("<img>").addClass("cover");
 
             // append title and poseter to gameElem
             gameElem.append(cover);    
 
             // append to game-list div
             $("#game-list").append(gameElem);
-            
-            $.ajax({
-                url: currentURL + "/api/game-image/" + cloudinaryId,
-                method: "GET"
-            })
-            .then(function(coverURL) {
 
-                // set high-res movie poster
-                cover.attr("src", coverURL).addClass("cover");
-                
-            });
-        }
+            
+        } 
+
+        getHighResCover();
+     
     });
+
+    
+    function getHighResCover() {
+        $.ajax({
+            url: currentURL + "/api/game-image/" + cloudinaryId,
+            method: "GET"
+        })
+        .then(function(coverURL) {
+    
+            // set high-res movie poster
+            cover.attr("src", coverURL);
+            
+        });
+    }
+
+    
 
     // function triggers when movie item is clicked, provides movie info and Movie Trailer video in a div at top of page
     $(document).on("click", ".movie", showMovieInfoVideo);

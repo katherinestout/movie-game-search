@@ -43,6 +43,8 @@ module.exports = function(app) {
             videoEmbeddable: true,
             search: searchTerm
         }).then(response => {
+
+
             // response.body contains the parsed JSON response to this query
             // console.log(response.body);
             res.json(response.body);
