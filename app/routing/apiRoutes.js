@@ -40,6 +40,7 @@ module.exports = function(app) {
             limit: 10,
             offset: 0,
             order: 'popularity:desc',
+            videoEmbeddable: true,
             search: searchTerm
         }).then(response => {
             // response.body contains the parsed JSON response to this query

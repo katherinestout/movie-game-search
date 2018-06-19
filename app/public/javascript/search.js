@@ -120,10 +120,10 @@ $("#search-btn").on("click", function(event) {
             console.log(videoData);
 
             // get link from data returend from call to youtube API
-            var ytLink = JSON.stringify(videoData[0].link);
-            console.log("youtube link for movie: " + ytLink);
+            var ytId = JSON.stringify(videoData[0].id);
+            console.log("youtube link for movie: " + ytId);
 
-            $("#yt-video").attr("src", ytLink);
+            $("#yt-video").attr("src", "https://www.youtube.com/embed/" + ytId.replace(/['"]+/g, ''));
 
             // show results div
             $(".results").show();
@@ -150,10 +150,10 @@ $("#search-btn").on("click", function(event) {
             console.log(videoData);
 
             // get link from data returned from call to youtube API
-            var ytLink = videoData[0].link;
-            console.log("youtube link for game: " + ytLink);
+            var ytId = JSON.stringify(videoData[0].id);
+            console.log("youtube link for game: " + ytId);
 
-            $("#yt-video").attr("src", ytLink);
+            $("#yt-video").attr("src", "https://www.youtube.com/embed/" + ytId.replace(/['"]+/g, ''));
 
             // show results div
             $(".results").show();
