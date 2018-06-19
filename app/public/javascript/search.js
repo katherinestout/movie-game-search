@@ -15,6 +15,7 @@ $("#search-btn").on("click", function(event) {
     $(".prompt").hide();
     $("#movie-list").show();
     $("#game-list").show();
+
     $(".nima").show();
 
 
@@ -65,6 +66,9 @@ $("#search-btn").on("click", function(event) {
             // append to movie-list div
             $("#movie-list").append(movieElem);
         }
+
+        $("#movie-header").show();
+     
     });
 
     // populate game-list 
@@ -94,6 +98,8 @@ $("#search-btn").on("click", function(event) {
             $("#game-list").append(gameElem);
 
         } 
+
+        $("#game-header").show();
 
     });
 
