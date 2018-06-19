@@ -106,6 +106,10 @@ margin: 10px;
     margin-right: 0px;
 }
 
+#search-container {
+    margin-left: 10%;
+}
+
 #movie-list {
     margin-left: 10%;
     display: none;
