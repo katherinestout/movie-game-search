@@ -1,6 +1,5 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var favicon = require('express-favicon');
 
 // Tells node that we are creating an "express" server
 var app = express();
@@ -12,7 +11,6 @@ app.use(bodyParser.json());
 
 // Get style.css, search.js etc
 app.use(express.static("app/public"));
-app.use(favicon(__dirname + '/public/favicon.png'));
 
 // points our server to a series of "route" files.
 // **** order matters, htmlRoutes includes a catch-all for other routes
