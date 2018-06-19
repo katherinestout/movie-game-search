@@ -3,13 +3,20 @@ $(".hurry").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", 
     $("#christina").attr("src", "images/christina.png").height(350);
 });
 
+// Nima animation
+$(".nima").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+    $(".nima").hide();
+});
+
 // handle search button press
 $("#search-btn").on("click", function(event) {
     event.preventDefault();
 
-    $("#christina").hide();
+    $(".prompt").hide();
     $("#movie-list").show();
     $("#game-list").show();
+    $(".nima").show();
+
 
     var searchTerm = $("#search-input").val().trim();
 
@@ -46,7 +53,7 @@ $("#search-btn").on("click", function(event) {
             // title.addClass("item-title");
 
             // get movie poster
-            var poster = $("<img>").attr("src", movie.Poster).addClass("poster");
+            var poster = $("<img>").attr("src", movie.Poster).addClass("poster").addClass("animated").addClass("rotateIn");
 
             // append title and poster to movieElem
             // movieElem.append(poster, title); 
@@ -84,7 +91,7 @@ $("#search-btn").on("click", function(event) {
             })
             .then(function(coverURL) {
                 // get movie poster
-                var cover = $("<img>").attr("src", coverURL).addClass("cover");
+                var cover = $("<img>").attr("src", coverURL).addClass("cover").addClass("animated").addClass("rotateIn");
 
                 // append title and poseter to gameElem
                 // gameElem.append(cover, title);
