@@ -17,7 +17,7 @@ module.exports = function(app) {
 
         // movies
         var queryUrl = "http://www.omdbapi.com/?s=" + searchTerm + "&type=movie&y=&plot=short&apikey=" + OMDB_KEY;
-            console.log("omdb query url: " + queryUrl);
+            // console.log("omdb query url: " + queryUrl);
             request(queryUrl, function(error, response, body) {
                 // If the request is successful
                 if (!error && response.statusCode === 200) {
@@ -66,17 +66,18 @@ module.exports = function(app) {
     
     });
 
-    app.get("/api/youtube/:title", function(req, res) {
+    app.get("/api/yt/:title", function(req, res) {
         
         var title = req.params.title;
         console.log("youtube/trailer search title: " + title);
 
         var options = {
-            maxResults: 10,
-            key: YOUTUBE_KEY
+            maxResults: 1,
+            key: YOUTUBE_KEY,
+            type: "video" 
         };
 
-        ytsearch('jsconf', options, function(err, results) {
+        ytsearch(title, options, function(err, results) {
             if (err) return console.log(err);
 
             console.log(results);
