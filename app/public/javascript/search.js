@@ -1,15 +1,22 @@
-// Add Christina animation
+// Christina animation
 $(".hurry").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
-    $("#christina").attr("src", "images/christina.png").height(325);
+    $("#christina").attr("src", "images/christina.png").height(350);
+});
+
+// Nima animation
+$(".nima").one("animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", function(){
+    $(".nima").hide();
 });
 
 // handle search button press
 $("#search-btn").on("click", function(event) {
     event.preventDefault();
 
-    $("#christina").hide();
+    $(".prompt").hide();
     $("#movie-list").show();
     $("#game-list").show();
+    $(".nima").show();
+
 
     var searchTerm = $("#search-input").val().trim();
 
@@ -50,14 +57,13 @@ $("#search-btn").on("click", function(event) {
             // title.addClass("item-title");
 
             // get movie poster
-            var poster = $("<img>").attr("src", movie.Poster).addClass("poster");
+            var poster = $("<img>").attr("src", movie.Poster).addClass("poster").addClass("animated").addClass("rotateIn");
 
             // append title and poster to movieElem
             // movieElem.append(poster, title); 
             movieElem.append(poster);
             // append to movie-list div
             $("#movie-list").append(movieElem);
-
         }
     });
 
@@ -88,6 +94,7 @@ $("#search-btn").on("click", function(event) {
             $("#game-list").append(gameElem);
 
         } 
+
     });
 
     function getCoverURL(cloudinaryId) {
